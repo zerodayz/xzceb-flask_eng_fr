@@ -23,18 +23,22 @@ def english_to_french(english_text):
     """
     Translates English Text into French
     """
-    translation = language_translator.translate(
-        text=english_text,
-        model_id='en-fr').get_result()
-    french_text = translation['translations'][0]['translation']
-    return french_text
+    if english_text != '':
+        translation = language_translator.translate(
+            text=english_text,
+            model_id='en-fr').get_result()
+        french_text = translation['translations'][0]['translation']
+        return french_text
+    return None
 
 def french_to_english(french_text):
     """
     Translates French Text into English
     """
-    translation = language_translator.translate(
-        text=french_text,
-        model_id='fr-en').get_result()
-    english_text = translation['translations'][0]['translation']
-    return english_text
+    if french_text != '':
+        translation = language_translator.translate(
+            text=french_text,
+            model_id='fr-en').get_result()
+        english_text = translation['translations'][0]['translation']
+        return english_text
+    return None

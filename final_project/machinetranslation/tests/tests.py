@@ -6,12 +6,12 @@ class TestEnglishToFrench(unittest.TestCase):
     def test_hello(self):
         self.assertEqual(english_to_french('Hello'), 'Bonjour')
     def test_null_input(self):
-        self.assertRaises(ApiException, english_to_french, '')
+        self.assertEqual(english_to_french(''), None)
 
 class TestFrenchToEnglish(unittest.TestCase):
     def test_hello(self):
         self.assertEqual(french_to_english('Bonjour'), 'Hello')
     def test_null_input(self):
-        self.assertRaises(ApiException, french_to_english, '')
+        self.assertEqual(french_to_english(''), None)
 
 unittest.main()
